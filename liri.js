@@ -76,11 +76,14 @@ function getMovie() {
 
 function getRandom() {
     var fs = require('fs');
-    input = arg2
-    fs.appendFile("random.txt", input, function(error, data) {
+  
+    fs.readFile("random.txt", "utf-8", function(error, data) {
         if(error){
             console.log(error);
         }
+        var dataArr = data.split(",");
+        arg1 = dataArr[0]
+        arg2 = dataArr[1]
         console.log(data)
     }
 
